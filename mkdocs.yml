@@ -1,4 +1,8 @@
 site_name: SyncLionPaw Blog
+site_url: "https://SyncLionPaw.github.io"  # GitHub Pages 的部署地址
+site_author: "SyncLionPaw"  # 作者名称
+repo_url: "https://github.com/SyncLionPaw/SyncLionPaw.github.io"  # 仓库地址
+repo_name: "SyncLionPaw"  # 右上角显示的仓库名称
 
 theme:
   name: material
@@ -88,3 +92,10 @@ markdown_extensions:
   # [Markdown footnote 语法支持]
   # https://squidfunk.github.io/mkdocs-material/reference/footnotes/
   - footnotes
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: "https://github.com/SyncLionPaw"
+    - icon: fontawesome/brands/twitter
+      link: "https://twitter.com/kaggle"
+  generator: false  # 隐藏页脚的 "使用 MkDocs 材料制造" 文字
