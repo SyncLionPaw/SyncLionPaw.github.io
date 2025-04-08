@@ -21,23 +21,41 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+# jobs:
+#   # Single deploy job since we're just deploying
+#   deploy:
+#     environment:
+#       name: github-pages
+#       url: ${{ steps.deployment.outputs.page_url }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout
+#         uses: actions/checkout@v4
+#       - name: Setup Pages
+#         uses: actions/configure-pages@v5
+#       - name: Upload artifact
+#         uses: actions/upload-pages-artifact@v3
+#         with:
+#           # Upload entire repository
+#           path: './site'
+#       - name: Deploy to GitHub Pages
+#         id: deployment
+#         uses: actions/deploy-pages@v4
 jobs:
-  # Single deploy job since we're just deploying
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: './site'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          fetch-depth: 0
+      - name: Setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install \
+              mkdocs-material>=9.5.0 \
+              mkdocs-macros-plugin \
+              mkdocs-static-i18n[material] \
+              mkdocs-git-revision-date-localized-plugin
+      - run: mkdocs gh-deploy --force
