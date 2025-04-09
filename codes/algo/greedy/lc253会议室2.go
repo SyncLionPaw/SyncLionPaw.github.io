@@ -1,0 +1,94 @@
+// lc253 会议室2，求会议室的最小数量
+package main
+
+import (
+	"container/heap"
+	"fmt"
+	"sort"
+)
+
+func minMeetingRooms(intervals [][]int) int {
+	allocator := &minHeap{}
+	heap.Init(allocator)
+
+	// 根据开始时间排序会议
+	sort.Slice(intervals, func(i, j int) bool { return intervals[i][0] < intervals[j][0] })
+	heap.Push(allocator, intervals[0][1])
+
+	// 遍历剩余会议
+	for i := 1; i < len(intervals); i++ {
+		// 如果最早应该腾出的房间是空闲的，则将该房间分配给本次会议。
+		if intervals[i][0] >= (*allocator)[0] {
+			heap.Pop(allocator)
+		}
+		// 如果要分配一个新房间，那么我们也要添加到堆中，
+		// 如果分配了一个旧房间，那么我们还必须添加到具有更新的结束时间的堆中。
+		heap.Push(allocator, intervals[i][1])
+	}
+
+	// 堆的大小告诉我们所有会议所
+	return len(*allocator)
+}
+
+// 小根堆
+type minHeap []int
+
+func (h minHeap) Len() int            { return len(h) }
+func (h minHeap) Less(i, j int) bool  { return h[i] < h[j] }
+func (h minHeap) Swap(i, j int)       { h[i], h[j] = h[j], h[i] }
+func (h *minHeap) Push(x interface{}) { *h = append(*h, x.(int)) }
+func (h *minHeap) Pop() interface{} {
+	v := (*h)[len(*h)-1]
+	*h = (*h)[:len(*h)-1]
+	return v
+}
+
+type Point struct {
+	t          int
+	point_type bool // 0 start, 1 end
+}
+
+// 扫描线思想，求同时在进行中的会议的最大数量（最大并发量）
+func minMeetingRooms2(intervals [][]int) int {
+	n := len(intervals)
+	times := make([]Point, 0, 2*n) // make(type, len, cap)
+	for _, interval := range intervals {
+		times = append(times, Point{interval[0], false})
+		times = append(times, Point{interval[1], true})
+	}
+	sort.Slice(times, func(i, j int) bool {
+		if times[i].t < times[j].t {
+			return true
+		} else if times[i].t == times[j].t {
+			return times[i].point_type // true的往前放置
+		}
+		return false // 为了处理 [[13,15],[1,13]] 这样的情况
+	})
+	// fmt.Printf("times: %v\n", times)
+	numOfOngingMetting := 0
+	ans := numOfOngingMetting
+	for i := 0; i < 2*n; i++ {
+		if times[i].point_type {
+			numOfOngingMetting--
+		} else {
+			numOfOngingMetting++
+		}
+		// fmt.Printf("numOfOngingMetting: %v\n", numOfOngingMetting)
+		ans = max(ans, numOfOngingMetting)
+	}
+	return ans
+}
+
+func main() {
+	intervals := [][]int{{1, 23}, {12, 28}, {25, 35}, {27, 80}, {36, 50}}
+	ans := minMeetingRooms(intervals)
+	fmt.Printf("ans: %v\n", ans) // 3
+
+	intervals = [][]int{{1, 23}, {12, 28}, {25, 35}, {27, 80}, {36, 50}}
+	ans = minMeetingRooms2(intervals)
+	fmt.Printf("ans: %v\n", ans)
+
+	intervals = [][]int{{13, 15}, {1, 13}}
+	ans = minMeetingRooms2(intervals)
+	fmt.Printf("ans: %v\n", ans)
+}

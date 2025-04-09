@@ -2,14 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://SyncLionPaw.github.io/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://SyncLionPaw.github.io/algo/graph/%E8%81%94%E9%80%9A%E5%88%86%E9%87%8F%E6%95%B0/</loc>
+         <lastmod>2025-04-09</lastmod>
+    </url>
+    <url>
+         <loc>https://SyncLionPaw.github.io/algo/greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/</loc>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://SyncLionPaw.github.io/golang/func/innerfunc/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
     <url>
          <loc>https://SyncLionPaw.github.io/python/collections/defaultdict_use/</loc>
-         <lastmod>2025-04-08</lastmod>
+         <lastmod>2025-04-09</lastmod>
     </url>
 </urlset>
