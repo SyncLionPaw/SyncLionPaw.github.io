@@ -40,6 +40,7 @@ nav:
   - Home: index.md
   - 'Golang':
     - 在函数内定义函数: 'golang/func/innerfunc.md'
+    - io.Reader: 'golang/ioreader/ioreader.md'
   - 'python':
     - 默认字典: 'python/collections/defaultdict_use.md'
   - '算法':
