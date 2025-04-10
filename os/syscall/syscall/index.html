@@ -10,7 +10,7 @@
         <meta name="author" content="SyncLionPaw">
       
       
-        <link rel="canonical" href="https://SyncLionPaw.github.io/algo/graph/%E8%81%94%E9%80%9A%E5%88%86%E9%87%8F%E6%95%B0/">
+        <link rel="canonical" href="https://SyncLionPaw.github.io/os/syscall/syscall/">
       
       
       
@@ -20,7 +20,7 @@
     
     
       
-        <title>求无向图的联通分量数目 - SyncLionPaw Blog</title>
+        <title>系统调用 - SyncLionPaw Blog</title>
       
     
     
@@ -108,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              求无向图的联通分量数目
+              系统调用
             
           </span>
         </div>
@@ -503,7 +503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
+      <a href="../../../algo/greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
         
   
   
@@ -553,28 +553,112 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dfs" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      dfs方法
+      系统调用的流程
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="dfs方法">
+    <nav class="md-nav" aria-label="系统调用的流程">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      构建图
+      用户程序使用库函数
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      求分量
+      库函数内部使用系统调用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      详细代码流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="详细代码流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecallstvecsepc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ecall，stvec，sepc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stvec" class="md-nav__link">
+    <span class="md-ellipsis">
+      stvec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uservc" class="md-nav__link">
+    <span class="md-ellipsis">
+      uservc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usertrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      usertrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usertrapret" class="md-nav__link">
+    <span class="md-ellipsis">
+      usertrapret
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统调用的实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统调用的实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      和文件系统打交道
     </span>
   </a>
   
@@ -604,17 +688,47 @@
   
 
 
-<h1 id="_1">求无向图的联通分量数目<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<p>把图想象成一堆东西，一股脑往天上抛，落地上之后，有几个分开的部分，就有几个联通分量。</p>
-<h2 id="dfs">dfs方法<a class="headerlink" href="#dfs" title="Permanent link">&para;</a></h2>
-<p>遍历每一个节点，如果访问过，就跳过。没访问过，就dfs或者bfs来访问它所在的分量，然后分量数+1，直到访问完。</p>
-<p>有点像岛屿数量。</p>
-<h3 id="_2">构建图<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>从邻接矩阵构建邻接表的图，方便进行dfs或者bfs。</p>
-<p>构建的时候，需要遍历全部的边，时间复杂度 O(E),因为要遍历所有的边。 空间复杂度 O(2E) 对于每一个边，都有两个节点要存到对方的邻接表中。</p>
-<h3 id="_3">求分量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>遍历每一个节点，如果访问过，就跳过。没访问过，就dfs或者bfs来访问它所在的分量，然后分量数+1，直到访问完。</p>
-<p>需要一个访问数组 visited 空间 O(V)，递归空间复杂度，最大 O(V)。时间复杂度 O(V+E)。</p>
+<h1 id="_1">系统调用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">系统调用的流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>以xv6为例，理解系统调用的流程</p>
+<ol>
+<li>用户程序使用库函数，例如glibc</li>
+<li>库函数中使用了系统函数，例如write，read，也要将参数放到a0-a5。</li>
+<li>系统函数内部，将系统调用号保存到某个寄存器（a7），呼叫ecall</li>
+<li>ecall做以下事情<ol>
+<li>保存用户的通用寄存器，上下文，便于后面恢复</li>
+<li>保存当前程序指针 pc 到sepc，保存当前特权级别到sstatus的特定位，写scause，中断原因</li>
+<li>切换到内核态，关中断</li>
+<li>读取stvec, 中断向量表，找到下一步要去的地方 uservec</li>
+<li>读取系统调用号码a7和参数a0-a5</li>
+<li>做对应的系统调用操作</li>
+<li>完成后恢复用户上下文</li>
+<li>开中断</li>
+<li>sret 将sepc恢复到pc</li>
+</ol>
+</li>
+<li>恢复到用户程序，判断系统调用的返回结果</li>
+</ol>
+<h3 id="_3">用户程序使用库函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>可以使用 strce 看自己的程序里面使用了哪些系统调用。</p>
+<h3 id="_4">库函数内部使用系统调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_5">详细代码流程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="ecallstvecsepc">ecall，stvec，sepc<a class="headerlink" href="#ecallstvecsepc" title="Permanent link">&para;</a></h3>
+<p>ecall是用户级别的指令，不是特权指令，用户态可以执行这个指令。
+sepc保存当前的PC后面再恢复的。</p>
+<h3 id="stvec">stvec<a class="headerlink" href="#stvec" title="Permanent link">&para;</a></h3>
+<p>stvec就是中断向量表寄存器。保存了：发生trap的时候，要去哪里执行中断处理函数。</p>
+<p>这个寄存器用最低位保存模式，它有两种模式。</p>
+<p>在riscv中，这个stvec保存的是uservec这段汇编指令的地址</p>
+<h3 id="uservc">uservc<a class="headerlink" href="#uservc" title="Permanent link">&para;</a></h3>
+<p>uservcui汇编指令会完成以下内容：
+1. 保存上下文到进程的trampframe
+2. 内核栈，内核页表
+3. 跳转到 usertrap</p>
+<h3 id="usertrap">usertrap<a class="headerlink" href="#usertrap" title="Permanent link">&para;</a></h3>
+<h3 id="usertrapret">usertrapret<a class="headerlink" href="#usertrapret" title="Permanent link">&para;</a></h3>
+<h2 id="_6">系统调用的实现<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">和文件系统打交道<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
 
 
 
