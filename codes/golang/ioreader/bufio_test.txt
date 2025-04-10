@@ -1,0 +1,45 @@
+`bufio`是 Go 语言标准库中的一个包，全称为 buffered I/O，主要用于提供带缓冲的 I/O 操作，能够提高 I/O 操作的效率，减少系统调用的次数。
+
+### 主要功能
+1. **缓冲读取**
+   - `bufio.NewReader`函数可以将一个 `io.Reader` 包装成一个 `bufio.Reader`。它会维护一个内部的缓冲区，当从 `bufio.Reader` 中读取数据时，它会先从缓冲区中读取，如果缓冲区中的数据不足，才会从底层的 `io.Reader` 中读取更多数据填充缓冲区。
+   - 例如，`bufio.Reader` 提供了 `ReadByte` 方法，可以高效地逐字节读取数据。它还提供了 `ReadString` 方法，可以根据指定的分隔符（如换行符 `\n`）读取一行数据。
+     ```go
+     reader := bufio.NewReader(os.Stdin)
+     line, err := reader.ReadString('\n')
+     if err != nil {
+         log.Fatal(err)
+     }
+     fmt.Println("Read line:", line)
+     ```
+     这里通过 `bufio.NewReader` 包装了标准输入流 `os.Stdin`，然后调用 `ReadString` 方法读取用户输入的一行数据。
+
+2. **缓冲写入**
+   - `bufio.NewWriter`函数可以将一个 `io.Writer` 包装成一个 `bufio.Writer`。它同样维护一个内部的缓冲区，当向 `bufio.Writer` 写入数据时，数据会先写入缓冲区，当缓冲区满了或者调用了 `Flush` 方法时，才会将缓冲区中的数据写入到底层的 `io.Writer` 中。
+   - 例如，`bufio.Writer` 提供了 `Write` 方法来写入数据，`Flush` 方法用于将缓冲区中的数据全部写入到底层的 `io.Writer`。
+     ```go
+     writer := bufio.NewWriter(os.Stdout)
+     writer.WriteString("Hello, bufio!\n")
+     writer.Flush()
+     ```
+     这里通过 `bufio.NewWriter` 包装了标准输出流 `os.Stdout`，先将字符串写入缓冲区，然后调用 `Flush` 方法将缓冲区中的数据输出到标准输出。
+
+3. **读取行**
+   - `bufio.Scanner` 是一个方便的工具，用于逐行读取文本。它也可以将一个 `io.Reader` 包装起来，通过设置不同的分隔符（默认是换行符）来读取数据。
+   - 例如：
+     ```go
+     scanner := bufio.NewScanner(os.Stdin)
+     for scanner.Scan() {
+         fmt.Println("Scanned line:", scanner.Text())
+     }
+     if err := scanner.Err(); err != nil {
+         log.Fatal(err)
+     }
+     ```
+     这里通过 `bufio.NewScanner` 包装了标准输入流 `os.Stdin`，然后通过循环调用 `Scan` 方法逐行读取用户输入，并通过 `Text` 方法获取每行的内容。
+
+### 优势
+- **提高效率**：通过缓冲机制减少了对底层 I/O 系统调用的次数，提高了 I/O 操作的效率。
+- **方便使用**：提供了丰富的接口和方法，方便开发者进行各种 I/O 操作，比如逐行读取、按分隔符读取等。
+
+`bufio` 包在处理文件 I/O、网络 I/O 等场景中非常有用，能够帮助开发者更高效地进行数据读取和写入操作。
