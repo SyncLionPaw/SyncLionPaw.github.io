@@ -46,6 +46,7 @@ nav:
     - 默认字典: 'python/collections/defaultdict_use.md'
   - 'algorithm':
     - 会议室2: 'algo/greedy/会议室2.md'
+    - 编辑距离: 'algo/dp/编辑距离.md'
 
 plugins:
   # [搜索功能]
