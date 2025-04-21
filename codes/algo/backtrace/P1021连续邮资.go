@@ -1,101 +1,93 @@
+// https://www.luogu.com.cn/problem/P1021
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"math"
+	"os"
+	"strconv"
+	"strings"
 )
 
-func maxCovers(stamps []int, N int) (r []int) {
-	stampType := len(stamps)
-	maxValue := stamps[stampType-1] * N  // 理论能达到的最大面值
-	minUse := make([][]int, stampType)
+func stampFunc(K int, stamps []int) int {
+	maxStamp := stamps[0]
+	for _, v := range stamps {
+		maxStamp = max(maxStamp, v)
+	}
+	maxValue := K * maxStamp
 
-	for i := range minUse {
-		minUse[i] = make([]int, maxValue+1)
-		for j := range minUse[i] {
-			minUse[i][j] = math.MaxInt64
-		}
+	f := make([]int, maxValue+2)
+	for i := 1; i <= maxValue; i++ {
+		f[i] = math.MaxInt32 / 2
 	}
 
-	for j := 0; j < maxValue; j++ {
-		if j*1 > N {
-			break
-		}
-		minUse[0][j] = j
-	}
-
-	for i := 0; i < stampType; i++ {
-		minUse[i][0] = 0
-	}
-
-	for i := 0; i < stampType; i++ {
-		for j := 1; j < maxValue; j++ {
-			curMin := minUse[i][j]
-			for t := 0; t < N; t++ {
-				if j < t*stamps[i] {
-					break
-				}
-				if i > 0 {
-					if minUse[i-1][j-t*stamps[i]] != math.MaxInt64 {
-						if t+minUse[i-1][j-t*stamps[i]] < curMin {
-							curMin = t + minUse[i-1][j-t*stamps[i]]
-						}
-					}
-				}
-			}
-			minUse[i][j] = curMin
-		}
-	}
-
-	r = make([]int, stampType)
-
-	for i := 0; i < stampType; i++ {
-		for j := 0; j < maxValue; j++ {
-			if j+1 < len(minUse[i]) && minUse[i][j+1] > N && minUse[i][j] <= N {
-				r[i] = j
+	for _, x := range stamps {
+		for j := x; j <= maxValue; j++ {
+			if f[j-x]+1 < f[j] {
+				f[j] = f[j-x] + 1
 			}
 		}
 	}
-	return
-}
 
-var (
-	ans   int
-	stamps []int
-)
-
-func backtrace(i int, path []int) {
-	tmp := maxCovers(path, N)
-	globalR := tmp[len(tmp)-1]
-	if i == K {
-		if globalR >= ans {
-			ans = globalR
-			stamps = make([]int, len(path))
-			copy(stamps, path)
+	for j := 1; j <= maxValue; j++ {
+		if f[j] > K {
+			return j - 1
 		}
-		return
 	}
-
-	for v := path[len(path)-1] + 1; v <= globalR+1; v++ {
-		newPath := make([]int, len(path))
-		copy(newPath, path)
-		newPath = append(newPath, v)
-		backtrace(i+1, newPath)
-	}
+	return maxValue
 }
 
-var N, K int
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+func min(a, b int) int {
+	if a > b {
+		return b
+	}
+	return a
+}
 
 func main() {
-	fmt.Scan(&N, &K)
-	path := []int{1}
-	ans = 1
-	stamps = []int{}
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	parts := strings.Fields(scanner.Text())
 
-	backtrace(1, path)
-	for i, v := range stamps {
-		fmt.Printf("%v", v)
-		if i == len(stamps)-1 {
+	N, _ := strconv.Atoi(parts[0])
+	K, _ := strconv.Atoi(parts[1]) // 修正K的获取
+
+	path := []int{1}
+	ans_stamps := []int{}
+	ans := 1
+
+	var backtrace func(i int)
+	backtrace = func(i int) {
+		r := stampFunc(N, path)
+		// fmt.Printf("r: %v\n", r)
+		// fmt.Printf("path: %v\n", path)
+		if i == K { // K 种邮票，修正终止条件
+			if ans < r {
+				ans = r
+				tmp := make([]int, len(path))
+				copy(tmp, path)
+				ans_stamps = tmp
+			}
+			return
+		}
+		for j := path[i-1] + 1; j <= r+1; j++ {
+			path = append(path, j)
+			backtrace(i + 1)
+			path = path[:len(path)-1]
+		}
+	}
+	backtrace(1)
+	for i, x := range ans_stamps {
+		fmt.Printf("%v", x)
+		if i == len(ans_stamps)-1 {
 			fmt.Println()
 		} else {
 			fmt.Printf(" ")
