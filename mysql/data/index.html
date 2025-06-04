@@ -661,14 +661,13 @@
         <li class="md-nav__item">
   <a href="#idb" class="md-nav__link">
     <span class="md-ellipsis">
-      .idb的内部结构
+      .idb简要了解
     </span>
   </a>
   
-    <nav class="md-nav" aria-label=".idb的内部结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       行
@@ -700,8 +699,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       行的真实数据
@@ -709,8 +708,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       页
@@ -726,11 +725,6 @@
       数据页的内部结构
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -861,14 +855,13 @@
         <li class="md-nav__item">
   <a href="#idb" class="md-nav__link">
     <span class="md-ellipsis">
-      .idb的内部结构
+      .idb简要了解
     </span>
   </a>
   
-    <nav class="md-nav" aria-label=".idb的内部结构">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       行
@@ -900,8 +893,8 @@
     </nav>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       行的真实数据
@@ -909,8 +902,8 @@
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       页
@@ -926,11 +919,6 @@
       数据页的内部结构
     </span>
   </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -1028,15 +1016,19 @@ innodb存储引擎下，默认是保存在 <code>/var/lib/mysql</code> 下的。
 </span><span id="__span-3-15"><span class="o">+</span><span class="c1">------------------+</span>
 </span><span id="__span-3-16"><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-再去查看/var/lib/mysql/testdb 就能看到 user.idb文件。
-这个就是用来存储user表的数据的。MySQL 中每一张表的数据都存放在一个独立的 .ibd 文件。</p>
+再去查看/var/lib/mysql/testdb 就能看到 user.idb文件。</p>
+<h2 id="idb">.idb简要了解<a class="headerlink" href="#idb" title="Permanent link">&para;</a></h2>
+<p>这个就是用来存储user表的数据的。MySQL 中每一张表的数据都存放在一个独立的 .ibd 文件。
+【这里有一个小故事，每一个表自己一个idb这个叫独立表空间，这个行为是可以控制的，在innodb 5.7之后是默认开启的】</p>
 <p>我们增删改查表，都是在对这个.idb里面的数据打交道。</p>
-<h2 id="idb">.idb的内部结构<a class="headerlink" href="#idb" title="Permanent link">&para;</a></h2>
-<p>一张表对应一个idb文件，这个文件由段（segment）、区（extent）、页（page）、行（row）组成。
+<p>一张表对应一个idb文件，这个文件自定向下有段（segment）、区（extent）、页（page）、行（row）等结构。
 <img alt="idb文件结构" src="../idb%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png" /></p>
-<h3 id="_1">行<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>行就是数据行，数据库表中的记录都是按行（row）进行存放的。</p>
-<p>行有好几种组织格式，可以使用下面的语句查看行的格式。5.7之后默认是dynamic了。
+<p>段区页都是比行大的单位，我们重点关注行和页。</p>
+<h2 id="_1">行<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>行就是数据行，数据库表中的记录都是按行（row）进行存放的。
+行有好几种组织格式，可以使用下面的语句查看行的格式。</p>
+<p>InnoDB 提供了 4 种行格式，分别是 Redundant（基本弃用）、Compact、Dynamic和 Compressed 行格式。</p>
+<p>5.7之后默认是dynamic了。
 <div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
@@ -1055,21 +1047,21 @@ innodb存储引擎下，默认是保存在 <code>/var/lib/mysql</code> 下的。
 </span><span id="__span-4-8">
 </span><span id="__span-4-9"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span>
 </span></code></pre></div></td></tr></table></div>
-行的数据，大致分为2个部分：真实数据，记录的额外信息。</p>
+行的数据，大致分为2个部分：真实数据，记录的额外信息。【这里是compact行，dynamic也很类似，细微差异】</p>
 <p>记录的额外信息是指：记录头信息，边长字段长度列表，NULL值列表。</p>
-<h4 id="_2">变长字段列表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<h3 id="_2">变长字段列表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
 <p>varchar(n) 这种字段的长度不是固定的，需要另外保存一下他的实际长度是多少，就保存在行记录的“记录的额外信息”中的“边长字段长度列表”。</p>
-<h4 id="null">NULL值列表<a class="headerlink" href="#null" title="Permanent link">&para;</a></h4>
+<h3 id="null">NULL值列表<a class="headerlink" href="#null" title="Permanent link">&para;</a></h3>
 <p>表中的某些列可能为NULL，如果每一个NULL都保存一下，浪费空间，使用一个位图来保存是NULL的列的编号。</p>
-<h3 id="_3">行的真实数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h2 id="_3">行的真实数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
 <p>除了数据的列以外还有几个字段，row_id、trx_id、roll_pointer。</p>
-<h3 id="_4">页<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_4">页<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
 <p>记录一条是一个行，但是存储引擎一次操作不是以一行为单位的，这样太低效了，而是以页为单位操作的。
 当要读一行的时候，也是先以页为单位，将一整页读入内存。</p>
 <p>默认每个页的大小为 16KB，也就是最多能保证 16KB 的连续存储空间。</p>
 <p>页是innodb引擎管理磁盘的最小单位，每次读写磁盘都是以16kb为单位的。一次最少从磁盘读16kb，一次最少把16kb的内容刷到磁盘中。</p>
 <p>页按照功能分有很多种，例如数据页、undo日志页等等，表的数据存在数据页里面。</p>
-<h4 id="_5">数据页的内部结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<h3 id="_5">数据页的内部结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
 <p>数据页并不是塞满了记录，除了记录还有一些其他的内容。</p>
 <p><img alt="数据页" src="../%E6%95%B0%E6%8D%AE%E9%A1%B5.png" /></p>
 <p>数据页包括很多部分，图里面是7部分，每个部分的作用如下。</p>
