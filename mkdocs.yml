@@ -47,6 +47,10 @@ nav:
   - 'algorithm':
     - 会议室2: 'algo/greedy/会议室2.md'
     - 编辑距离: 'algo/dp/编辑距离.md'
+  - 'mysql':
+    - 数据行: 'mysql/data.md'
+  - 'redis':
+    - 当缓存: 'redis/as_cache/cache_q.md'
 
 plugins:
   # [搜索功能]

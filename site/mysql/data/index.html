@@ -10,24 +10,28 @@
         <meta name="author" content="SyncLionPaw">
       
       
-        <link rel="canonical" href="https://SyncLionPaw.github.io/algo/diff/diff/">
+        <link rel="canonical" href="https://SyncLionPaw.github.io/mysql/data/">
       
       
+        <link rel="prev" href="../../algo/dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="next" href="../../redis/as_cache/cache_q/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>差分数组 - SyncLionPaw Blog</title>
+        <title>数据行 - SyncLionPaw Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#mysql" class="md-skip">
           跳转至
         </a>
       
@@ -88,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="SyncLionPaw Blog" class="md-header__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
+    <a href="../.." title="SyncLionPaw Blog" class="md-header__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              差分数组
+              数据行
             
           </span>
         </div>
@@ -228,7 +232,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="SyncLionPaw Blog" class="md-nav__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
+    <a href="../.." title="SyncLionPaw Blog" class="md-nav__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -258,7 +262,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -315,7 +319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../golang/func/innerfunc/" class="md-nav__link">
+      <a href="../../golang/func/innerfunc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -337,7 +341,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../golang/ioreader/ioreader/" class="md-nav__link">
+      <a href="../../golang/ioreader/ioreader/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -359,7 +363,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../golang/ioreader/bufio/" class="md-nav__link">
+      <a href="../../golang/ioreader/bufio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -424,7 +428,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/collections/defaultdict_use/" class="md-nav__link">
+      <a href="../../python/collections/defaultdict_use/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -489,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
+      <a href="../../algo/greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -511,7 +515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+      <a href="../../algo/dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,17 +541,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -562,7 +568,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             mysql
@@ -573,10 +579,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../mysql/data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    数据行
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -586,6 +613,116 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MySQL 的数据保存在哪里？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idb" class="md-nav__link">
+    <span class="md-ellipsis">
+      .idb的内部结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".idb的内部结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变长字段列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULL值列表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      行的真实数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      页
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="页">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据页的内部结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -641,7 +778,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redis/as_cache/cache_q/" class="md-nav__link">
+      <a href="../../redis/as_cache/cache_q/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -690,29 +827,92 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MySQL 的数据保存在哪里？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idb" class="md-nav__link">
+    <span class="md-ellipsis">
+      .idb的内部结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".idb的内部结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      问题引入：
+      变长字段列表
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULL值列表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      多次操作
+      行的真实数据
     </span>
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      解决办法
+      页
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="页">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据页的内部结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -735,27 +935,45 @@
   
 
 
-<h1 id="_1">差分数组<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">问题引入：<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>现在有一个数组 nums [1, 3, 5, 7, 0]
-现在给你一个长度为2的数组a [2, 4] 表示把 nums 从下标 a[0] 到 a[1] 范围内的元素都加1。
-求变化之后的数组的元素。</p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<h1 id="mysql">MYSQL 如何保存一行数据<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h1>
+<p><a href="https://xiaolincoding.com/mysql/base/row_format.html#记录的额外信息">参考小林的八股</a></p>
+<h2 id="mysql_1">MySQL 的数据保存在哪里？<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h2>
+<p>从存储介质的角度，数据保存在硬盘上————是持久化存储。
+从文件系统的角度，MySQL的存储数据保存在哪一个目录下？
+innodb存储引擎下，默认是保存在 <code>/var/lib/mysql</code> 下的。</p>
+<p>可以通过mysql命令行客户端，输入命令查看数据保存的目录。</p>
+<p><div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-</span><span id="__span-0-2"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-</span><span id="__span-0-3">
-</span><span id="__span-0-4"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-0-5">    <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-0-6"><span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;datadir&#39;</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="o">+</span><span class="c1">---------------+-----------------+</span>
+</span><span id="__span-0-3"><span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w">           </span><span class="o">|</span>
+</span><span id="__span-0-4"><span class="o">+</span><span class="c1">---------------+-----------------+</span>
+</span><span id="__span-0-5"><span class="o">|</span><span class="w"> </span><span class="n">datadir</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="w"> </span><span class="o">|</span>
+</span><span id="__span-0-6"><span class="o">+</span><span class="c1">---------------+-----------------+</span>
+</span><span id="__span-0-7"><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<h2 id="_3">多次操作<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>若要进行多次操作呢？
-例如 operators = [[1, 3], [2, 4], [1, 2], [2, 4]]</p>
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+每当我们创建一个database、就会在 <code>/var/lib/mysql</code>下面创建一个目录。
+例如现在创建一个库database。
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">testdb</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+再去文件系统下面就可以看到这同名目录。
+第二行最后一个就是刚才创建的数据库的目录。
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">bash-5.1#<span class="w"> </span>ls<span class="w"> </span>/var/lib/mysql
+</span><span id="__span-2-2"><span class="s1">&#39;#ib_16384_0.dblwr&#39;</span><span class="w">   </span>auto.cnf<span class="w">        </span>ca-key.pem<span class="w">        </span>ib_buffer_pool<span class="w">   </span>mysql.ibd<span class="w">               </span>private_key.pem<span class="w">   </span>sys
+</span><span id="__span-2-3"><span class="s1">&#39;#ib_16384_1.dblwr&#39;</span><span class="w">   </span>binlog.000001<span class="w">   </span>ca.pem<span class="w">            </span>ibdata1<span class="w">          </span>mysql.sock<span class="w">              </span>public_key.pem<span class="w">    </span>testdb
+</span><span id="__span-2-4"><span class="s1">&#39;#innodb_redo&#39;</span><span class="w">        </span>binlog.000002<span class="w">   </span>client-cert.pem<span class="w">   </span>ibtmp1<span class="w">           </span>mysql_upgrade_history<span class="w">   </span>server-cert.pem<span class="w">   </span>undo_001
+</span><span id="__span-2-5"><span class="s1">&#39;#innodb_temp&#39;</span><span class="w">        </span>binlog.index<span class="w">    </span>client-key.pem<span class="w">    </span>mysql<span class="w">            </span>performance_schema<span class="w">      </span>server-key.pem<span class="w">    </span>undo_002
+</span></code></pre></div></td></tr></table></div>
+再来给这个库里面建一个表。
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -765,50 +983,76 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="n">operators</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]]</span>
-</span><span id="__span-1-2">
-</span><span id="__span-1-3">
-</span><span id="__span-1-4"><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-</span><span id="__span-1-5">
-</span><span id="__span-1-6"><span class="k">for</span> <span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="ow">in</span> <span class="n">operators</span><span class="p">:</span>
-</span><span id="__span-1-7">    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-1-8">        <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
-</span><span id="__span-1-9">
-</span><span id="__span-1-10">
-</span><span id="__span-1-11"><span class="nb">print</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="c1">-- 创建 user 表</span>
+</span><span id="__span-3-2"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-3-3"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;用户唯一标识&#39;</span><span class="p">,</span>
+</span><span id="__span-3-4"><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;用户名，唯一&#39;</span><span class="p">,</span>
+</span><span id="__span-3-5"><span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;用户密码&#39;</span>
+</span><span id="__span-3-6"><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COMMENT</span><span class="o">=</span><span class="s1">&#39;用户表&#39;</span><span class="p">;</span>
+</span><span id="__span-3-7">
+</span><span id="__span-3-8"><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">14</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</span><span id="__span-3-9">
+</span><span id="__span-3-10"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span>
+</span><span id="__span-3-11"><span class="o">+</span><span class="c1">------------------+</span>
+</span><span id="__span-3-12"><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_testdb</span><span class="w"> </span><span class="o">|</span>
+</span><span id="__span-3-13"><span class="o">+</span><span class="c1">------------------+</span>
+</span><span id="__span-3-14"><span class="o">|</span><span class="w"> </span><span class="k">user</span><span class="w">             </span><span class="o">|</span>
+</span><span id="__span-3-15"><span class="o">+</span><span class="c1">------------------+</span>
+</span><span id="__span-3-16"><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
-<p>若是频繁修改，每次修改的时间复杂度都是 O(n) 则不可接受。</p>
-<h2 id="_4">解决办法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>差分数组
-先构建一个数组
-我们先对 nums 数组构造一个 diff 差分数组，diff[i] 就是 nums[i] 和 nums[i-1] 之差：
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+再去查看/var/lib/mysql/testdb 就能看到 user.idb文件。
+这个就是用来存储user表的数据的。MySQL 中每一张表的数据都存放在一个独立的 .ibd 文件。</p>
+<p>我们增删改查表，都是在对这个.idb里面的数据打交道。</p>
+<h2 id="idb">.idb的内部结构<a class="headerlink" href="#idb" title="Permanent link">&para;</a></h2>
+<p>一张表对应一个idb文件，这个文件由段（segment）、区（extent）、页（page）、行（row）组成。
+<img alt="idb文件结构" src="../idb%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png" /></p>
+<h3 id="_1">行<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>行就是数据行，数据库表中的记录都是按行（row）进行存放的。</p>
+<p>行有好几种组织格式，可以使用下面的语句查看行的格式。5.7之后默认是dynamic了。
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="n">diff</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
-</span><span id="__span-2-2"><span class="c1"># 构造差分数组</span>
-</span><span id="__span-2-3"><span class="n">diff</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="__span-2-4"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
-</span><span id="__span-2-5">    <span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">&quot;innodb_default_row_format&quot;</span><span class="p">;</span>
+</span><span id="__span-4-2"><span class="o">+</span><span class="c1">---------------------------+---------+</span>
+</span><span id="__span-4-3"><span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w">   </span><span class="o">|</span>
+</span><span id="__span-4-4"><span class="o">+</span><span class="c1">---------------------------+---------+</span>
+</span><span id="__span-4-5"><span class="o">|</span><span class="w"> </span><span class="n">innodb_default_row_format</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">dynamic</span><span class="w"> </span><span class="o">|</span>
+</span><span id="__span-4-6"><span class="o">+</span><span class="c1">---------------------------+---------+</span>
+</span><span id="__span-4-7"><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</span><span id="__span-4-8">
+</span><span id="__span-4-9"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span>
 </span></code></pre></div></td></tr></table></div>
-差分数组的每一项diff[i] = diff[i] - diff[i-1]</p>
-<p>差分数组的每一项，都是 <strong>我</strong> 减去 <strong>我前面的</strong> 的差值。</p>
-<p>通过这个 diff 差分数组是可以反推出原始数组 nums 的，代码逻辑如下：
-<div class="language-py highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)</span>
-</span><span id="__span-3-2"><span class="c1"># 根据差分数组构造结果数组</span>
-</span><span id="__span-3-3"><span class="n">res</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">diff</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</span><span id="__span-3-4"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">diff</span><span class="p">)):</span>
-</span><span id="__span-3-5">    <span class="n">res</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">res</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">diff</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-</span></code></pre></div></td></tr></table></div>
-恢复的时候，记得要加上前面的。</p>
-<p>如果想对nums的区间[i..j]进行+3操作，就只需要让diff[i]+3, 然后diff[j+1] -= 3</p>
-<p>原理很简单，回想 diff 数组反推 nums 数组的过程，diff[i] += 3 意味着给 nums[i..] 所有的元素都加了 3，然后 diff[j+1] -= 3 又意味着对于 nums[j+1..] 所有元素再减 3，那综合起来，是不是就是对 nums[i..j] 中的所有元素都加 3 了？</p>
-<p>只要花费 O(1) 的时间修改 diff 数组，就相当于给 nums 的整个区间做了修改。多次修改 diff，然后通过 diff 数组反推，即可得到 nums 修改后的结果。</p>
+行的数据，大致分为2个部分：真实数据，记录的额外信息。</p>
+<p>记录的额外信息是指：记录头信息，边长字段长度列表，NULL值列表。</p>
+<h4 id="_2">变长字段列表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>varchar(n) 这种字段的长度不是固定的，需要另外保存一下他的实际长度是多少，就保存在行记录的“记录的额外信息”中的“边长字段长度列表”。</p>
+<h4 id="null">NULL值列表<a class="headerlink" href="#null" title="Permanent link">&para;</a></h4>
+<p>表中的某些列可能为NULL，如果每一个NULL都保存一下，浪费空间，使用一个位图来保存是NULL的列的编号。</p>
+<h3 id="_3">行的真实数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>除了数据的列以外还有几个字段，row_id、trx_id、roll_pointer。</p>
+<h3 id="_4">页<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>记录一条是一个行，但是存储引擎一次操作不是以一行为单位的，这样太低效了，而是以页为单位操作的。
+当要读一行的时候，也是先以页为单位，将一整页读入内存。</p>
+<p>默认每个页的大小为 16KB，也就是最多能保证 16KB 的连续存储空间。</p>
+<p>页是innodb引擎管理磁盘的最小单位，每次读写磁盘都是以16kb为单位的。一次最少从磁盘读16kb，一次最少把16kb的内容刷到磁盘中。</p>
+<p>页按照功能分有很多种，例如数据页、undo日志页等等，表的数据存在数据页里面。</p>
+<h4 id="_5">数据页的内部结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>数据页并不是塞满了记录，除了记录还有一些其他的内容。</p>
+<p><img alt="数据页" src="../%E6%95%B0%E6%8D%AE%E9%A1%B5.png" /></p>
+<p>数据页包括很多部分，图里面是7部分，每个部分的作用如下。</p>
+<p><img alt="数据页各部分" src="../%E6%95%B0%E6%8D%AE%E9%A1%B5%E5%90%84%E9%83%A8%E5%88%86.png" /></p>
+<p>在数据页的File Header中，有两个指针，分别指向上一个数据页和下一个数据页，双向链表。</p>
+<p>数据页的作用就是存用户数据，就是User record部分。</p>
 
 
 
@@ -882,10 +1126,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "header.autohide", "navigation.tracking", "navigation.top", "search.highlight", "search.share", "search.suggest", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "header.autohide", "navigation.tracking", "navigation.top", "search.highlight", "search.share", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
