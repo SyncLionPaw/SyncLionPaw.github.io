@@ -10,24 +10,28 @@
         <meta name="author" content="SyncLionPaw">
       
       
-        <link rel="canonical" href="https://SyncLionPaw.github.io/os/syscall/syscall/">
+        <link rel="canonical" href="https://SyncLionPaw.github.io/mysql/data/">
       
       
+        <link rel="prev" href="../../algo/dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="next" href="../../redis/as_cache/cache_q/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>系统调用 - SyncLionPaw Blog</title>
+        <title>数据行 - SyncLionPaw Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -72,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#mysql" class="md-skip">
           跳转至
         </a>
       
@@ -88,7 +92,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../.." title="SyncLionPaw Blog" class="md-header__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
+    <a href="../.." title="SyncLionPaw Blog" class="md-header__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              系统调用
+              数据行
             
           </span>
         </div>
@@ -231,7 +235,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="SyncLionPaw Blog" class="md-nav__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
+    <a href="../.." title="SyncLionPaw Blog" class="md-nav__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -261,7 +265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
@@ -321,7 +325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../golang/func/innerfunc/" class="md-nav__link">
+      <a href="../../golang/func/innerfunc/" class="md-nav__link">
         
   
   
@@ -344,7 +348,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../golang/ioreader/ioreader/" class="md-nav__link">
+      <a href="../../golang/ioreader/ioreader/" class="md-nav__link">
         
   
   
@@ -367,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../golang/ioreader/bufio/" class="md-nav__link">
+      <a href="../../golang/ioreader/bufio/" class="md-nav__link">
         
   
   
@@ -435,7 +439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../python/collections/defaultdict_use/" class="md-nav__link">
+      <a href="../../python/collections/defaultdict_use/" class="md-nav__link">
         
   
   
@@ -503,7 +507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../algo/greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
+      <a href="../../algo/greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
         
   
   
@@ -526,7 +530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../algo/dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+      <a href="../../algo/dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
         
   
   
@@ -553,18 +557,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
@@ -580,7 +586,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             mysql
@@ -591,10 +597,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../mysql/data/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    数据行
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -605,6 +633,116 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mysql_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      MySQL 的数据保存在哪里？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idb" class="md-nav__link">
+    <span class="md-ellipsis">
+      .idb的内部结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".idb的内部结构">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变长字段列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULL值列表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      行的真实数据
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      页
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="页">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      数据页的内部结构
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -662,7 +800,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../redis/as_cache/cache_q/" class="md-nav__link">
+      <a href="../../redis/as_cache/cache_q/" class="md-nav__link">
         
   
   
@@ -712,19 +850,61 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#mysql_1" class="md-nav__link">
     <span class="md-ellipsis">
-      系统调用的流程
+      MySQL 的数据保存在哪里？
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="系统调用的流程">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#idb" class="md-nav__link">
+    <span class="md-ellipsis">
+      .idb的内部结构
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label=".idb的内部结构">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      行
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="行">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      变长字段列表
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null" class="md-nav__link">
+    <span class="md-ellipsis">
+      NULL值列表
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      用户程序使用库函数
+      行的真实数据
     </span>
   </a>
   
@@ -733,67 +913,17 @@
           <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      库函数内部使用系统调用
+      页
     </span>
   </a>
   
-</li>
+    <nav class="md-nav" aria-label="页">
+      <ul class="md-nav__list">
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      详细代码流程
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="详细代码流程">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#ecallstvecsepc" class="md-nav__link">
-    <span class="md-ellipsis">
-      ecall，stvec，sepc
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#stvec" class="md-nav__link">
-    <span class="md-ellipsis">
-      stvec
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#uservc" class="md-nav__link">
-    <span class="md-ellipsis">
-      uservc
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usertrap" class="md-nav__link">
-    <span class="md-ellipsis">
-      usertrap
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#usertrapret" class="md-nav__link">
-    <span class="md-ellipsis">
-      usertrapret
+      数据页的内部结构
     </span>
   </a>
   
@@ -801,25 +931,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      系统调用的实现
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="系统调用的实现">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      和文件系统打交道
-    </span>
-  </a>
   
 </li>
         
@@ -847,47 +958,124 @@
   
 
 
-<h1 id="_1">系统调用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
-<h2 id="_2">系统调用的流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>以xv6为例，理解系统调用的流程</p>
-<ol>
-<li>用户程序使用库函数，例如glibc</li>
-<li>库函数中使用了系统函数，例如write，read，也要将参数放到a0-a5。</li>
-<li>系统函数内部，将系统调用号保存到某个寄存器（a7），呼叫ecall</li>
-<li>ecall做以下事情<ol>
-<li>保存用户的通用寄存器，上下文，便于后面恢复</li>
-<li>保存当前程序指针 pc 到sepc，保存当前特权级别到sstatus的特定位，写scause，中断原因</li>
-<li>切换到内核态，关中断</li>
-<li>读取stvec, 中断向量表，找到下一步要去的地方 uservec</li>
-<li>读取系统调用号码a7和参数a0-a5</li>
-<li>做对应的系统调用操作</li>
-<li>完成后恢复用户上下文</li>
-<li>开中断</li>
-<li>sret 将sepc恢复到pc</li>
-</ol>
-</li>
-<li>恢复到用户程序，判断系统调用的返回结果</li>
-</ol>
-<h3 id="_3">用户程序使用库函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>可以使用 strce 看自己的程序里面使用了哪些系统调用。</p>
-<h3 id="_4">库函数内部使用系统调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<h2 id="_5">详细代码流程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<h3 id="ecallstvecsepc">ecall，stvec，sepc<a class="headerlink" href="#ecallstvecsepc" title="Permanent link">&para;</a></h3>
-<p>ecall是用户级别的指令，不是特权指令，用户态可以执行这个指令。
-sepc保存当前的PC后面再恢复的。</p>
-<h3 id="stvec">stvec<a class="headerlink" href="#stvec" title="Permanent link">&para;</a></h3>
-<p>stvec就是中断向量表寄存器。保存了：发生trap的时候，要去哪里执行中断处理函数。</p>
-<p>这个寄存器用最低位保存模式，它有两种模式。</p>
-<p>在riscv中，这个stvec保存的是uservec这段汇编指令的地址</p>
-<h3 id="uservc">uservc<a class="headerlink" href="#uservc" title="Permanent link">&para;</a></h3>
-<p>uservcui汇编指令会完成以下内容：
-1. 保存上下文到进程的trampframe
-2. 内核栈，内核页表
-3. 跳转到 usertrap</p>
-<h3 id="usertrap">usertrap<a class="headerlink" href="#usertrap" title="Permanent link">&para;</a></h3>
-<h3 id="usertrapret">usertrapret<a class="headerlink" href="#usertrapret" title="Permanent link">&para;</a></h3>
-<h2 id="_6">系统调用的实现<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
-<h3 id="_7">和文件系统打交道<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<h1 id="mysql">MYSQL 如何保存一行数据<a class="headerlink" href="#mysql" title="Permanent link">&para;</a></h1>
+<p><a href="https://xiaolincoding.com/mysql/base/row_format.html#记录的额外信息">参考小林的八股</a></p>
+<h2 id="mysql_1">MySQL 的数据保存在哪里？<a class="headerlink" href="#mysql_1" title="Permanent link">&para;</a></h2>
+<p>从存储介质的角度，数据保存在硬盘上————是持久化存储。
+从文件系统的角度，MySQL的存储数据保存在哪一个目录下？
+innodb存储引擎下，默认是保存在 <code>/var/lib/mysql</code> 下的。</p>
+<p>可以通过mysql命令行客户端，输入命令查看数据保存的目录。</p>
+<p><div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="s1">&#39;datadir&#39;</span><span class="p">;</span>
+</span><span id="__span-0-2"><span class="o">+</span><span class="c1">---------------+-----------------+</span>
+</span><span id="__span-0-3"><span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w">           </span><span class="o">|</span>
+</span><span id="__span-0-4"><span class="o">+</span><span class="c1">---------------+-----------------+</span>
+</span><span id="__span-0-5"><span class="o">|</span><span class="w"> </span><span class="n">datadir</span><span class="w">       </span><span class="o">|</span><span class="w"> </span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">mysql</span><span class="o">/</span><span class="w"> </span><span class="o">|</span>
+</span><span id="__span-0-6"><span class="o">+</span><span class="c1">---------------+-----------------+</span>
+</span><span id="__span-0-7"><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">00</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+每当我们创建一个database、就会在 <code>/var/lib/mysql</code>下面创建一个目录。
+例如现在创建一个库database。
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="n">testdb</span><span class="w"> </span><span class="nb">CHARACTER</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COLLATE</span><span class="w"> </span><span class="n">utf8mb4_unicode_ci</span><span class="p">;</span>
+</span></code></pre></div></td></tr></table></div>
+再去文件系统下面就可以看到这同名目录。
+第二行最后一个就是刚才创建的数据库的目录。
+<div class="language-shell highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1">bash-5.1#<span class="w"> </span>ls<span class="w"> </span>/var/lib/mysql
+</span><span id="__span-2-2"><span class="s1">&#39;#ib_16384_0.dblwr&#39;</span><span class="w">   </span>auto.cnf<span class="w">        </span>ca-key.pem<span class="w">        </span>ib_buffer_pool<span class="w">   </span>mysql.ibd<span class="w">               </span>private_key.pem<span class="w">   </span>sys
+</span><span id="__span-2-3"><span class="s1">&#39;#ib_16384_1.dblwr&#39;</span><span class="w">   </span>binlog.000001<span class="w">   </span>ca.pem<span class="w">            </span>ibdata1<span class="w">          </span>mysql.sock<span class="w">              </span>public_key.pem<span class="w">    </span>testdb
+</span><span id="__span-2-4"><span class="s1">&#39;#innodb_redo&#39;</span><span class="w">        </span>binlog.000002<span class="w">   </span>client-cert.pem<span class="w">   </span>ibtmp1<span class="w">           </span>mysql_upgrade_history<span class="w">   </span>server-cert.pem<span class="w">   </span>undo_001
+</span><span id="__span-2-5"><span class="s1">&#39;#innodb_temp&#39;</span><span class="w">        </span>binlog.index<span class="w">    </span>client-key.pem<span class="w">    </span>mysql<span class="w">            </span>performance_schema<span class="w">      </span>server-key.pem<span class="w">    </span>undo_002
+</span></code></pre></div></td></tr></table></div>
+再来给这个库里面建一个表。
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="c1">-- 创建 user 表</span>
+</span><span id="__span-3-2"><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-3-3"><span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="nb">INT</span><span class="w"> </span><span class="n">AUTO_INCREMENT</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;用户唯一标识&#39;</span><span class="p">,</span>
+</span><span id="__span-3-4"><span class="w">    </span><span class="n">username</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">UNIQUE</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;用户名，唯一&#39;</span><span class="p">,</span>
+</span><span id="__span-3-5"><span class="w">    </span><span class="n">password</span><span class="w"> </span><span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;用户密码&#39;</span>
+</span><span id="__span-3-6"><span class="p">)</span><span class="w"> </span><span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="w"> </span><span class="k">COMMENT</span><span class="o">=</span><span class="s1">&#39;用户表&#39;</span><span class="p">;</span>
+</span><span id="__span-3-7">
+</span><span id="__span-3-8"><span class="n">Query</span><span class="w"> </span><span class="n">OK</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">affected</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">14</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</span><span id="__span-3-9">
+</span><span id="__span-3-10"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">tables</span><span class="p">;</span>
+</span><span id="__span-3-11"><span class="o">+</span><span class="c1">------------------+</span>
+</span><span id="__span-3-12"><span class="o">|</span><span class="w"> </span><span class="n">Tables_in_testdb</span><span class="w"> </span><span class="o">|</span>
+</span><span id="__span-3-13"><span class="o">+</span><span class="c1">------------------+</span>
+</span><span id="__span-3-14"><span class="o">|</span><span class="w"> </span><span class="k">user</span><span class="w">             </span><span class="o">|</span>
+</span><span id="__span-3-15"><span class="o">+</span><span class="c1">------------------+</span>
+</span><span id="__span-3-16"><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">01</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+再去查看/var/lib/mysql/testdb 就能看到 user.idb文件。
+这个就是用来存储user表的数据的。MySQL 中每一张表的数据都存放在一个独立的 .ibd 文件。</p>
+<p>我们增删改查表，都是在对这个.idb里面的数据打交道。</p>
+<h2 id="idb">.idb的内部结构<a class="headerlink" href="#idb" title="Permanent link">&para;</a></h2>
+<p>一张表对应一个idb文件，这个文件由段（segment）、区（extent）、页（page）、行（row）组成。
+<img alt="idb文件结构" src="../idb%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84.png" /></p>
+<h3 id="_1">行<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>行就是数据行，数据库表中的记录都是按行（row）进行存放的。</p>
+<p>行有好几种组织格式，可以使用下面的语句查看行的格式。5.7之后默认是dynamic了。
+<div class="language-sql highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">show</span><span class="w"> </span><span class="n">variables</span><span class="w"> </span><span class="k">like</span><span class="w"> </span><span class="ss">&quot;innodb_default_row_format&quot;</span><span class="p">;</span>
+</span><span id="__span-4-2"><span class="o">+</span><span class="c1">---------------------------+---------+</span>
+</span><span id="__span-4-3"><span class="o">|</span><span class="w"> </span><span class="n">Variable_name</span><span class="w">             </span><span class="o">|</span><span class="w"> </span><span class="n">Value</span><span class="w">   </span><span class="o">|</span>
+</span><span id="__span-4-4"><span class="o">+</span><span class="c1">---------------------------+---------+</span>
+</span><span id="__span-4-5"><span class="o">|</span><span class="w"> </span><span class="n">innodb_default_row_format</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="k">dynamic</span><span class="w"> </span><span class="o">|</span>
+</span><span id="__span-4-6"><span class="o">+</span><span class="c1">---------------------------+---------+</span>
+</span><span id="__span-4-7"><span class="mi">1</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">.</span><span class="mi">05</span><span class="w"> </span><span class="n">sec</span><span class="p">)</span>
+</span><span id="__span-4-8">
+</span><span id="__span-4-9"><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span>
+</span></code></pre></div></td></tr></table></div>
+行的数据，大致分为2个部分：真实数据，记录的额外信息。</p>
+<p>记录的额外信息是指：记录头信息，边长字段长度列表，NULL值列表。</p>
+<h4 id="_2">变长字段列表<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h4>
+<p>varchar(n) 这种字段的长度不是固定的，需要另外保存一下他的实际长度是多少，就保存在行记录的“记录的额外信息”中的“边长字段长度列表”。</p>
+<h4 id="null">NULL值列表<a class="headerlink" href="#null" title="Permanent link">&para;</a></h4>
+<p>表中的某些列可能为NULL，如果每一个NULL都保存一下，浪费空间，使用一个位图来保存是NULL的列的编号。</p>
+<h3 id="_3">行的真实数据<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>除了数据的列以外还有几个字段，row_id、trx_id、roll_pointer。</p>
+<h3 id="_4">页<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>记录一条是一个行，但是存储引擎一次操作不是以一行为单位的，这样太低效了，而是以页为单位操作的。
+当要读一行的时候，也是先以页为单位，将一整页读入内存。</p>
+<p>默认每个页的大小为 16KB，也就是最多能保证 16KB 的连续存储空间。</p>
+<p>页是innodb引擎管理磁盘的最小单位，每次读写磁盘都是以16kb为单位的。一次最少从磁盘读16kb，一次最少把16kb的内容刷到磁盘中。</p>
+<p>页按照功能分有很多种，例如数据页、undo日志页等等，表的数据存在数据页里面。</p>
+<h4 id="_5">数据页的内部结构<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<p>数据页并不是塞满了记录，除了记录还有一些其他的内容。</p>
+<p><img alt="数据页" src="../%E6%95%B0%E6%8D%AE%E9%A1%B5.png" /></p>
+<p>数据页包括很多部分，图里面是7部分，每个部分的作用如下。</p>
+<p><img alt="数据页各部分" src="../%E6%95%B0%E6%8D%AE%E9%A1%B5%E5%90%84%E9%83%A8%E5%88%86.png" /></p>
+<p>在数据页的File Header中，有两个指针，分别指向上一个数据页和下一个数据页，双向链表。</p>
+<p>数据页的作用就是存用户数据，就是User record部分。</p>
 
 
 
@@ -963,10 +1151,10 @@ sepc保存当前的PC后面再恢复的。</p>
     
     
       
-      <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "header.autohide", "navigation.tracking", "navigation.top", "search.highlight", "search.share", "search.suggest", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["header.autohide", "header.autohide", "navigation.tracking", "navigation.top", "search.highlight", "search.share", "search.suggest", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
   </body>
