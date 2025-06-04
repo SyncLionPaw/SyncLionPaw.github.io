@@ -10,22 +10,24 @@
         <meta name="author" content="SyncLionPaw">
       
       
+        <link rel="canonical" href="https://SyncLionPaw.github.io/os/syscall/syscall/">
       
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
     
     
       
-        <title>SyncLionPaw Blog</title>
+        <title>系统调用 - SyncLionPaw Blog</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.4af4bdda.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
       
         
-        <link rel="stylesheet" href="/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -44,7 +46,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,6 +71,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,7 +88,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="/." title="SyncLionPaw Blog" class="md-header__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
+    <a href="../../.." title="SyncLionPaw Blog" class="md-header__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -101,7 +108,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              系统调用
             
           </span>
         </div>
@@ -221,7 +228,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="SyncLionPaw Blog" class="md-nav__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
+    <a href="../../.." title="SyncLionPaw Blog" class="md-nav__button md-logo" aria-label="SyncLionPaw Blog" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -251,7 +258,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -308,7 +315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/golang/func/innerfunc/" class="md-nav__link">
+      <a href="../../../golang/func/innerfunc/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -330,7 +337,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/golang/ioreader/ioreader/" class="md-nav__link">
+      <a href="../../../golang/ioreader/ioreader/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -352,7 +359,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/golang/ioreader/bufio/" class="md-nav__link">
+      <a href="../../../golang/ioreader/bufio/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,7 +424,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/python/collections/defaultdict_use/" class="md-nav__link">
+      <a href="../../../python/collections/defaultdict_use/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -482,7 +489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/algo/greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
+      <a href="../../../algo/greedy/%E4%BC%9A%E8%AE%AE%E5%AE%A42/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/algo/dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
+      <a href="../../../algo/dp/%E7%BC%96%E8%BE%91%E8%B7%9D%E7%A6%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -543,6 +550,133 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统调用的流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统调用的流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户程序使用库函数
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      库函数内部使用系统调用
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      详细代码流程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="详细代码流程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ecallstvecsepc" class="md-nav__link">
+    <span class="md-ellipsis">
+      ecall，stvec，sepc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stvec" class="md-nav__link">
+    <span class="md-ellipsis">
+      stvec
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#uservc" class="md-nav__link">
+    <span class="md-ellipsis">
+      uservc
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usertrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      usertrap
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usertrapret" class="md-nav__link">
+    <span class="md-ellipsis">
+      usertrapret
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统调用的实现
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="系统调用的实现">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      和文件系统打交道
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -554,8 +688,67 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  
+  
+
+
+<h1 id="_1">系统调用<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
+<h2 id="_2">系统调用的流程<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>以xv6为例，理解系统调用的流程</p>
+<ol>
+<li>用户程序使用库函数，例如glibc</li>
+<li>库函数中使用了系统函数，例如write，read，也要将参数放到a0-a5。</li>
+<li>系统函数内部，将系统调用号保存到某个寄存器（a7），呼叫ecall</li>
+<li>ecall做以下事情<ol>
+<li>保存用户的通用寄存器，上下文，便于后面恢复</li>
+<li>保存当前程序指针 pc 到sepc，保存当前特权级别到sstatus的特定位，写scause，中断原因</li>
+<li>切换到内核态，关中断</li>
+<li>读取stvec, 中断向量表，找到下一步要去的地方 uservec</li>
+<li>读取系统调用号码a7和参数a0-a5</li>
+<li>做对应的系统调用操作</li>
+<li>完成后恢复用户上下文</li>
+<li>开中断</li>
+<li>sret 将sepc恢复到pc</li>
+</ol>
+</li>
+<li>恢复到用户程序，判断系统调用的返回结果</li>
+</ol>
+<h3 id="_3">用户程序使用库函数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>可以使用 strce 看自己的程序里面使用了哪些系统调用。</p>
+<h3 id="_4">库函数内部使用系统调用<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<h2 id="_5">详细代码流程<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<h3 id="ecallstvecsepc">ecall，stvec，sepc<a class="headerlink" href="#ecallstvecsepc" title="Permanent link">&para;</a></h3>
+<p>ecall是用户级别的指令，不是特权指令，用户态可以执行这个指令。
+sepc保存当前的PC后面再恢复的。</p>
+<h3 id="stvec">stvec<a class="headerlink" href="#stvec" title="Permanent link">&para;</a></h3>
+<p>stvec就是中断向量表寄存器。保存了：发生trap的时候，要去哪里执行中断处理函数。</p>
+<p>这个寄存器用最低位保存模式，它有两种模式。</p>
+<p>在riscv中，这个stvec保存的是uservec这段汇编指令的地址</p>
+<h3 id="uservc">uservc<a class="headerlink" href="#uservc" title="Permanent link">&para;</a></h3>
+<p>uservcui汇编指令会完成以下内容：
+1. 保存上下文到进程的trampframe
+2. 内核栈，内核页表
+3. 跳转到 usertrap</p>
+<h3 id="usertrap">usertrap<a class="headerlink" href="#usertrap" title="Permanent link">&para;</a></h3>
+<h3 id="usertrapret">usertrapret<a class="headerlink" href="#usertrapret" title="Permanent link">&para;</a></h3>
+<h2 id="_6">系统调用的实现<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">和文件系统打交道<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -616,10 +809,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["header.autohide", "header.autohide", "navigation.tracking", "navigation.top", "search.highlight", "search.share", "search.suggest", "content.code.annotate"], "search": "/assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["header.autohide", "header.autohide", "navigation.tracking", "navigation.top", "search.highlight", "search.share", "search.suggest", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.c8b220af.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
       
     
   </body>
