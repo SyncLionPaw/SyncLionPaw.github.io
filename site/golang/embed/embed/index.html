@@ -10,13 +10,13 @@
         <meta name="author" content="SyncLionPaw">
       
       
-        <link rel="canonical" href="https://SyncLionPaw.github.io/golang/ioreader/bufio/">
+        <link rel="canonical" href="https://SyncLionPaw.github.io/golang/embed/embed/">
       
       
-        <link rel="prev" href="../ioreader/">
+        <link rel="prev" href="../../ioreader/bufio/">
       
       
-        <link rel="next" href="../../embed/embed/">
+        <link rel="next" href="../../../python/collections/defaultdict_use/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>bufio - SyncLionPaw Blog</title>
+        <title>embed - SyncLionPaw Blog</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bufio-io" class="md-skip">
+        <a href="#embed" class="md-skip">
           跳转至
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              bufio
+              embed
             
           </span>
         </div>
@@ -343,11 +343,33 @@
   
   
     <li class="md-nav__item">
-      <a href="../ioreader/" class="md-nav__link">
+      <a href="../../ioreader/ioreader/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     io.Reader
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ioreader/bufio/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    bufio
     
   </span>
   
@@ -378,7 +400,7 @@
           
   
   <span class="md-ellipsis">
-    bufio
+    embed
     
   </span>
   
@@ -390,7 +412,7 @@
         
   
   <span class="md-ellipsis">
-    bufio
+    embed
     
   </span>
   
@@ -415,42 +437,27 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      带缓冲区
+      引入
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="带缓冲区">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      写缓冲区的存在
+      作用
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      读缓冲区
+      示例
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bufioscanner" class="md-nav__link">
-    <span class="md-ellipsis">
-      bufio.Scanner
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -463,41 +470,10 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      疑问：
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../embed/embed/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    embed
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -821,42 +797,27 @@
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
-      带缓冲区
+      引入
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="带缓冲区">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      写缓冲区的存在
+      作用
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      读缓冲区
+      示例
     </span>
   </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bufioscanner" class="md-nav__link">
-    <span class="md-ellipsis">
-      bufio.Scanner
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -864,15 +825,6 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       总结
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      疑问：
     </span>
   </a>
   
@@ -897,139 +849,83 @@
   
 
 
-<h1 id="bufio-io">bufio 带缓冲的 IO 操作库<a class="headerlink" href="#bufio-io" title="Permanent link">&para;</a></h1>
-<p>bufio是标准库的一个包，全称为 buffered I/O，主要用于提供带缓冲的 I/O 操作，能够提高 I/O 操作的效率，减少系统调用的次数。</p>
-<h2 id="_1">带缓冲区<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p>bufio.NewReader函数可以将一个 io.Reader 包装成一个 bufio.Reader。它会维护一个内部的缓冲区，当从 bufio.Reader 中读取数据时，它会先从缓冲区中读取，如果缓冲区中的数据不足，才会从底层的 io.Reader 中读取更多数据填充缓冲区。</p>
-<p>bufio.NewWriter函数可以将一个 io.Writer 包装成一个 bufio.Writer。它同样维护一个内部的缓冲区，当向 bufio.Writer 写入数据时，数据会先写入缓冲区，当缓冲区满了或者调用了 Flush 方法时，才会将缓冲区中的数据写入到底层的 io.Writer 中</p>
-<p>这个缓冲区域是维护在内存中，所以相较于多次的直接系统调用和磁盘、网络打交道，要相对快一些。</p>
-<h3 id="_2">写缓冲区的存在<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>使用 bufio.NewWriter 证明：是先向缓冲区写，Flush之后，才向Stdout写
-<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
-</span><span id="__span-0-2">
-</span><span id="__span-0-3"><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-0-4"><span class="w">    </span><span class="s">&quot;bufio&quot;</span>
-</span><span id="__span-0-5"><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
-</span><span id="__span-0-6"><span class="w">    </span><span class="s">&quot;os&quot;</span>
-</span><span id="__span-0-7"><span class="p">)</span>
-</span><span id="__span-0-8">
-</span><span id="__span-0-9"><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-0-10"><span class="w">    </span><span class="nx">w</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bufio</span><span class="p">.</span><span class="nx">NewWriter</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdout</span><span class="p">)</span><span class="w"> </span><span class="c1">// 能向标准输出写</span>
-</span><span id="__span-0-11"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nx">WriteString</span><span class="p">(</span><span class="s">&quot;this is a string.&quot;</span><span class="p">)</span>
-</span><span id="__span-0-12"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nx">WriteByte</span><span class="p">(</span><span class="mi">97</span><span class="p">)</span>
-</span><span id="__span-0-13"><span class="w">    </span><span class="nx">smile</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="sc">&#39;😀&#39;</span>
-</span><span id="__span-0-14">
-</span><span id="__span-0-15"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;unicode: %U\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">smile</span><span class="p">)</span>
-</span><span id="__span-0-16">
-</span><span id="__span-0-17"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nx">WriteRune</span><span class="p">(</span><span class="nx">smile</span><span class="p">)</span><span class="w"> </span><span class="c1">// 这个是一个 unicode 码点</span>
-</span><span id="__span-0-18">
-</span><span id="__span-0-19"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;** up to now, writer content hasn&#39;t been printed to stdout **&quot;</span><span class="p">)</span>
-</span><span id="__span-0-20">
-</span><span id="__span-0-21"><span class="w">    </span><span class="nx">w</span><span class="p">.</span><span class="nx">Flush</span><span class="p">()</span>
-</span><span id="__span-0-22"><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-Flush 方法用于将缓冲区中的数据全部写入到底层的 io.Writer。
-当使用 bufio.NewWriter(stdout) 的时候，会默认创建一个4096大小的缓冲区。
-并且他的参数os.Stdout 本身是一个io.Writer(具体类型是os.File)。</p>
-<h3 id="_3">读缓冲区<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
-<p>bufio.Reader 也是维护了一个读缓冲区，先尽量从读缓冲区读。</p>
-<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
-<span class="normal"> 2</span>
-<span class="normal"> 3</span>
-<span class="normal"> 4</span>
-<span class="normal"> 5</span>
-<span class="normal"> 6</span>
-<span class="normal"> 7</span>
-<span class="normal"> 8</span>
-<span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span>
-<span class="normal">12</span>
-<span class="normal">13</span>
-<span class="normal">14</span>
-<span class="normal">15</span>
-<span class="normal">16</span>
-<span class="normal">17</span>
-<span class="normal">18</span>
-<span class="normal">19</span>
-<span class="normal">20</span>
-<span class="normal">21</span>
-<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
-</span><span id="__span-1-2">
-</span><span id="__span-1-3"><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
-</span><span id="__span-1-4"><span class="w">    </span><span class="s">&quot;bufio&quot;</span>
-</span><span id="__span-1-5"><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
-</span><span id="__span-1-6"><span class="w">    </span><span class="s">&quot;os&quot;</span>
-</span><span id="__span-1-7"><span class="p">)</span>
-</span><span id="__span-1-8">
-</span><span id="__span-1-9"><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-10"><span class="w">    </span><span class="nx">r</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">os</span><span class="p">.</span><span class="nx">Open</span><span class="p">(</span><span class="s">&quot;bufio_test.txt&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// reader</span>
-</span><span id="__span-1-11"><span class="w">    </span><span class="nx">br</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bufio</span><span class="p">.</span><span class="nx">NewReader</span><span class="p">(</span><span class="nx">r</span><span class="p">)</span><span class="w">          </span><span class="c1">// bufio 包装 io.reader</span>
-</span><span id="__span-1-12">
-</span><span id="__span-1-13"><span class="w">    </span><span class="nx">shortStr</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">br</span><span class="p">.</span><span class="nx">ReadString</span><span class="p">(</span><span class="sc">&#39;G&#39;</span><span class="p">)</span>
-</span><span id="__span-1-14"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;shortStr: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">shortStr</span><span class="p">)</span>
-</span><span id="__span-1-15">
-</span><span id="__span-1-16"><span class="w">    </span><span class="nx">str</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="p">,</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">br</span><span class="p">.</span><span class="nx">ReadLine</span><span class="p">()</span>
-</span><span id="__span-1-17"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;str: %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">str</span><span class="p">)</span>
-</span><span id="__span-1-18">
-</span><span id="__span-1-19"><span class="w">    </span><span class="c1">// Buffered, 返回已经预读缓存的字节数</span>
-</span><span id="__span-1-20"><span class="w">    </span><span class="c1">// Buffered returns the number of bytes that can be read from the current buffer</span>
-</span><span id="__span-1-21"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Printf</span><span class="p">(</span><span class="s">&quot;br.Buffered(): %v\n&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">br</span><span class="p">.</span><span class="nx">Buffered</span><span class="p">())</span><span class="w"> </span><span class="c1">// 2804</span>
-</span><span id="__span-1-22"><span class="p">}</span>
-</span></code></pre></div></td></tr></table></div>
-<h3 id="bufioscanner">bufio.Scanner<a class="headerlink" href="#bufioscanner" title="Permanent link">&para;</a></h3>
-<p>bufio.Scanner 是一个方便的工具，用于逐行读取文本。它也可以将一个 io.Reader 包装起来，通过设置不同的分隔符（默认是换行符）来读取数据。</p>
+<h1 id="embed">embed<a class="headerlink" href="#embed" title="Permanent link">&para;</a></h1>
+<h2 id="_1">引入<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>有一次在项目中看到了这样的内容</p>
 <p><div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="c1">//go:embed jules_verne.txt</span>
+</span><span id="__span-0-2"><span class="c1">//go:embed vocab</span>
+</span></code></pre></div></td></tr></table></div>
+看起来像是注释，但是是一种特殊的语言特性。</p>
+<h2 id="_2">作用<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>embed 的主要用途是将外部文件的内容嵌入到 Go 程序中，使得程序可以直接使用这些文件内容，而无需在运行时加载外部文件。以下是一个简单的例子：</p>
+<h2 id="_3">示例<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>示例：嵌入 HTML 文件
+假设我们有一个 HTML 文件 index.html，内容如下：</p>
+<div class="language-html highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">HTML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
 <span class="normal">5</span>
 <span class="normal">6</span>
-<span class="normal">7</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="nx">scanner</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">bufio</span><span class="p">.</span><span class="nx">NewScanner</span><span class="p">(</span><span class="nx">os</span><span class="p">.</span><span class="nx">Stdin</span><span class="p">)</span>
-</span><span id="__span-2-2"><span class="k">for</span><span class="w"> </span><span class="nx">scanner</span><span class="p">.</span><span class="nx">Scan</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-3"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Scanned line:&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">scanner</span><span class="p">.</span><span class="nx">Text</span><span class="p">())</span>
-</span><span id="__span-2-4"><span class="p">}</span>
-</span><span id="__span-2-5"><span class="k">if</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">:=</span><span class="w"> </span><span class="nx">scanner</span><span class="p">.</span><span class="nx">Err</span><span class="p">();</span><span class="w"> </span><span class="nx">err</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-2-6"><span class="w">    </span><span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
-</span><span id="__span-2-7"><span class="p">}</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-1-2"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span><span id="__span-1-3"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-1-4">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Embedded Example<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span><span id="__span-1-5"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span><span id="__span-1-6"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-1-7">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Hello, Go Embed!<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span><span id="__span-1-8"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span><span id="__span-1-9"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div></td></tr></table></div>
-这里通过 bufio.NewScanner 包装了标准输入流 os.Stdin，然后通过循环调用 Scan 方法逐行读取用户输入，并通过 Text 方法获取每行的内容。</p>
+<p>我们可以使用 embed 将这个文件嵌入到 Go 程序中：
+<div class="language-go highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Go</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="kn">package</span><span class="w"> </span><span class="nx">main</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="kn">import</span><span class="w"> </span><span class="p">(</span>
+</span><span id="__span-2-4"><span class="w">    </span><span class="nx">_</span><span class="w"> </span><span class="s">&quot;embed&quot;</span>
+</span><span id="__span-2-5"><span class="w">    </span><span class="s">&quot;fmt&quot;</span>
+</span><span id="__span-2-6"><span class="p">)</span>
+</span><span id="__span-2-7">
+</span><span id="__span-2-8"><span class="c1">//go:embed index.html</span>
+</span><span id="__span-2-9"><span class="kd">var</span><span class="w"> </span><span class="nx">htmlContent</span><span class="w"> </span><span class="kt">string</span>
+</span><span id="__span-2-10">
+</span><span id="__span-2-11"><span class="kd">func</span><span class="w"> </span><span class="nx">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-2-12"><span class="w">    </span><span class="c1">// 输出嵌入的 HTML 内容</span>
+</span><span id="__span-2-13"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&quot;Embedded HTML Content:&quot;</span><span class="p">)</span>
+</span><span id="__span-2-14"><span class="w">    </span><span class="nx">fmt</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">htmlContent</span><span class="p">)</span>
+</span><span id="__span-2-15"><span class="p">}</span>
+</span></code></pre></div></td></tr></table></div></p>
 <h2 id="_4">总结<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<p>bufio是Go的标准的包，维护缓冲区，用来避免额外的IO操作。
-- 提高效率：通过缓冲机制减少了对底层 I/O 系统调用的次数，提高了 I/O 操作的效率。
-- 方便使用：提供了丰富的接口和方法，方便开发者进行各种 I/O 操作，比如逐行读取、按分隔符读取等, 比bare的io.Reader 例如 strings.Reader 要方便一点。</p>
-<p>bufio 包在处理文件 I/O、网络 I/O 等场景中非常有用，能够帮助开发者更高效地进行数据读取和写入操作。</p>
-<h2 id="_5">疑问：<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>对于本身就在内存的数据，例如string, 何必还要"减少底层的strings.NewReader 的调用次数"？</p>
-<ul>
-<li>
-<p>对于内存中的数据（如 string），bufio.Reader 的缓冲机制并不会带来显著的性能提升，因为内存读取本身已经非常快。</p>
-</li>
-<li>
-<p>如果你需要逐行读取或实现复杂的读取逻辑，bufio.Reader 或 bufio.Scanner 仍然是非常有用的工具，因为它们提供了更方便的方法和灵活性。</p>
-</li>
-</ul>
+<p>写在谁的头上，那个变量就变成了这个嵌入文件的内容</p>
+<p>用途
+嵌入静态资源:</p>
+<p>嵌入 HTML、CSS、JavaScript 文件，用于构建 Web 应用。
+嵌入配置文件（如 JSON、YAML）。
+嵌入文本数据:</p>
+<p>嵌入词汇表、文档或其他文本数据（如你的 jules_verne.txt 和 vocab 文件）。
+简化部署:</p>
+<p>将所有资源打包到一个二进制文件中，避免运行时依赖外部文件。</p>
+<p>注意事项
+嵌入的文件路径必须是相对路径。
+嵌入的文件内容会增加二进制文件的大小，适合小型文件。
+embed 仅支持 Go 1.16 及以上版本。
+通过 embed，你可以轻松地将外部资源整合到 Go 程序中，简化开发和部署流程。</p>
 
 
 
