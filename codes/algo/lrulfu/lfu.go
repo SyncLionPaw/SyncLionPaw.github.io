@@ -1,5 +1,7 @@
 package main
 
+// 淘汰的时候，对于次数一样的，优先去掉最久没用的（lru）
+
 type Node struct {
 	// value ...
 	prev  *Node
