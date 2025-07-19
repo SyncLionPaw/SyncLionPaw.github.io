@@ -89,7 +89,7 @@ func (this *LRUCache) Put(key int, value int)  {
 	newNode := &Node{key: key, value: value}
 	if this.cap > this.size {
 		this.link.InsertHead(newNode)
-		this.link.size++
+		this.size++
 	} else {
 		lastOne := this.link.tail.prev
 		this.link.Pick(lastOne)
