@@ -72,6 +72,16 @@ func Constructor(capacity int) LFUCache {
 	return LFUCache{capacity, 0, flm, knm, 1}
 }
 
+func (this *LFUCache) GetListByFreq(freq int) *DoubleLinkList {
+	l := this.freqLinkMap[freq]
+	if l != nil {
+		return l
+	}
+	l = NewDoubleLinkList()
+	this.freqLinkMap[freq] = l
+	return l
+}
+
 func (this *LFUCache) Get(key int) int {
 	node, e := this.knMap[key]
 	if !e {
@@ -85,10 +95,7 @@ func (this *LFUCache) Get(key int) int {
 	}
 	node.freq++
 	// 加入新的链
-	if nextLinkList := this.freqLinkMap[node.freq]; nextLinkList == nil {
-		this.freqLinkMap[node.freq] = NewDoubleLinkList()
-	}
-	this.freqLinkMap[node.freq].InsertHead(node)
+	this.GetListByFreq(node.freq).InsertHead(node)
 	return node.value
 }
 
@@ -104,32 +111,23 @@ func (this *LFUCache) Put(key int, value int) {
 		}
 
 		node.freq++
-		if nextLinkList := this.freqLinkMap[node.freq]; nextLinkList == nil {
-			this.freqLinkMap[node.freq] = NewDoubleLinkList()
-		}
 		// 加到新的链头
-		this.freqLinkMap[node.freq].InsertHead(node)
+		this.GetListByFreq(node.freq).InsertHead(node)
 		return
 	}
 	// 原先没有的，要判断是否需要淘汰
 	newNode := &Node{value: value, key: key, freq: 1}
 
 	if this.size < this.cap { // 有空间，不必淘汰
-		if nextLinkList := this.freqLinkMap[1]; nextLinkList == nil {
-			this.freqLinkMap[1] = NewDoubleLinkList()
-		}
-		this.freqLinkMap[1].InsertHead(newNode)
+		oneLink := this.GetListByFreq(1)
+		oneLink.InsertHead(newNode)
 		this.size++
 	} else {
 		// 驱逐旧的
 		drop := this.freqLinkMap[this.minFreq].tail.prev
 		this.freqLinkMap[this.minFreq].Pick(drop)
 		delete(this.knMap, drop.key)
-
-		if nextLinkList := this.freqLinkMap[1]; nextLinkList == nil {
-			this.freqLinkMap[1] = NewDoubleLinkList()
-		}
-		this.freqLinkMap[1].InsertHead(newNode)
+		this.GetListByFreq(1).InsertHead(newNode)
 	}
 	this.minFreq = 1
 	this.knMap[key] = newNode
