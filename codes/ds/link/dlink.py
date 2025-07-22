@@ -75,7 +75,7 @@ class LRUCache:
             self.link.remove(node)
             self.link.insert_head(node)
             return
-        newNode = Node(value, owner=self, key=key)
+        newNode = Node(value, owner=self.link, key=key)
 
         if len(self) >= self.cap:
             drop = self.link.remove_before_tail()
