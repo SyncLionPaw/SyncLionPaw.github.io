@@ -1,3 +1,4 @@
+from collections import defaultdict
 from typing import Dict
 
 
@@ -8,6 +9,12 @@ class Node:
         self.val = val
         self.owner = owner
         self.key = key
+
+
+class FreqNode(Node):
+    def __init__(self, val, prv=None, nxt=None, owner=None, key=0, freq=1):
+        super().__init__(self, val, prv, nxt, owner, key)
+        self.freq = freq
 
 
 class DoubleLinkList:
@@ -83,3 +90,56 @@ class LRUCache:
 
         self.kn_map[key] = newNode
         self.link.insert_head(newNode)
+
+
+class LFUCache:
+    def __init__(self, capacity: int):
+        self.cap = capacity
+        self.kn_map: Dict[int, Node] = {}
+        self.links: Dict[int, DoubleLinkList] = defaultdict(DoubleLinkList)
+        self.size = 0
+        self.min_freq = 0
+
+        self.size = 0  # maintain cache.size cause there were several links, for len, iterate costs O(n)
+
+    def get(self, key: int) -> int:
+        node: FreqNode = self.kn_map.get(key, None)
+        if node is None:
+            return -1
+        link = self.links[node.freq]
+        link.remove(node)
+
+        # remove node from old link, may incr the min_freq
+        if link.size == 0 and self.min_freq == node.freq:
+            self.min_freq += 1
+
+        node.freq += 1
+        upper_link = self.links[node.freq]
+        upper_link.insert_head(node)
+
+        return node.val
+
+    def put(self, key: int, value: int) -> None:
+        node: FreqNode = self.kn_map.get(key, None)
+        if node is not None:
+            link = self.links[node.freq]
+            link.remove(node)
+            if self.min_freq == node.freq and link.size == 0:
+                self.min_freq += 1
+            node.freq += 1
+            node.val = value  # may change val
+            new_link = self.links[node.freq]
+            new_link.insert_head(node)
+            return
+        one_freq_link = self.links[1]
+        new_node = FreqNode(key=key, val=value, owner=one_freq_link, freq=1)
+
+        if self.size >= self.cap:
+            old_link = self.links[self.min_freq]
+            drop = old_link.remove_before_tail()
+            self.kn_map.pop(drop.key)
+            self.size -= 1
+        one_freq_link.insert_head(new_node)
+        self.kn_map[key] = new_node
+        self.min_freq = 1
+        self.size += 1
