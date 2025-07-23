@@ -13,7 +13,7 @@ class Node:
 
 class FreqNode(Node):
     def __init__(self, val, prv=None, nxt=None, owner=None, key=0, freq=1):
-        super().__init__(self, val, prv, nxt, owner, key)
+        super().__init__(val=val, prv=prv, nxt=nxt, owner=owner, key=key)
         self.freq = freq
 
 
@@ -98,7 +98,7 @@ class LFUCache:
         self.kn_map: Dict[int, Node] = {}
         self.links: Dict[int, DoubleLinkList] = defaultdict(DoubleLinkList)
         self.size = 0
-        self.min_freq = 0
+        self.min_freq = 1
 
         self.size = 0  # maintain cache.size cause there were several links, for len, iterate costs O(n)
 
@@ -115,6 +115,7 @@ class LFUCache:
 
         node.freq += 1
         upper_link = self.links[node.freq]
+        node.owner = upper_link
         upper_link.insert_head(node)
 
         return node.val
@@ -130,6 +131,7 @@ class LFUCache:
             node.val = value  # may change val
             new_link = self.links[node.freq]
             new_link.insert_head(node)
+            node.owner = new_link
             return
         one_freq_link = self.links[1]
         new_node = FreqNode(key=key, val=value, owner=one_freq_link, freq=1)
